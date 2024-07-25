@@ -16,7 +16,7 @@ const Card = ({ image, title }) => {
 const styles = StyleSheet.create({
   card: {
     width: 90,
-    height: 80,
+    height: 70,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',

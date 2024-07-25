@@ -126,14 +126,12 @@ export const BettingFlatList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   flatListContainer: {
     width: Dimensions.get("window").width,
   },
   flatListContainerTrending: {
     width: Dimensions.get("window").width,
-    marginBottom: 0,
   },
   flatListContent: {
     alignItems: "center",
