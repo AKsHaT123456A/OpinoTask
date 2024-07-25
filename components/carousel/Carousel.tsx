@@ -16,7 +16,7 @@ const CustomImage = ({item, x, index, size, spacer}: CustomImageProps) => {
   useLayoutEffect(() => {
     if (item.image) {
       const {width, height} = Image.resolveAssetSource(item.image);
-      setAspectRatio(width / (height+10));
+      setAspectRatio(width / (height-80));
     }
   }, [item.image]);
 

@@ -93,7 +93,7 @@ const CustomCarousal = ({
               index={index}
               item={item}
               x={x}
-              size={SIZE}
+              size={SIZE+10}
               spacer={SPACER}
             />
           );
