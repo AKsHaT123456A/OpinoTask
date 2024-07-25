@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState, useEffect } from "react";
 import {
   Dimensions,
   StyleSheet,
@@ -7,6 +7,8 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  BackHandler,
+  Alert,
 } from "react-native";
 import CustomCarousel from "@/components/carousel/CustomCarousel";
 import Navbar from "@/components/Navbar";
@@ -72,6 +74,27 @@ const HomeScreen: React.FC = () => {
     bottomSheetModalRef.current?.dismiss(); // Close the bottom sheet
   }, []);
 
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert("Hold on!", "Are you sure you want to go back?", [
+        {
+          text: "Cancel",
+          onPress: () => null,
+          style: "cancel"
+        },
+        { text: "YES", onPress: () => BackHandler.exitApp() }
+      ]);
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
   return (
     <BottomSheetModalProvider>
       <View style={styles.container}>
@@ -95,7 +118,7 @@ const HomeScreen: React.FC = () => {
             renderItem={({ item }) => (
               <TouchableOpacity
                 style={styles.card}
-                onPress={() => router.replace("(main)")}
+                onPress={() => router.push("/screen")}
               >
                 <View style={styles.header}>
                   <Text style={styles.question}>{item.question}</Text>

@@ -37,7 +37,8 @@ export default function RootLayout() {
             backgroundColor={colorScheme === 'dark' ? '#000' : '#fff'}
           />
           <Stack>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="(main)/(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="screen/index" options={{ headerShown: false }}  />
             <Stack.Screen name="+not-found" />
           </Stack>
         </View>
