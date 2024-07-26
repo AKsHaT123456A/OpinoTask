@@ -8,6 +8,7 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
+import { NavigationProvider } from "@/context/NavigationContext";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -31,6 +32,7 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
+        <NavigationProvider>
         <View style={styles.container}>
           <StatusBar
             barStyle={colorScheme === 'dark' ? 'light-content' : 'dark-content'}
@@ -42,6 +44,7 @@ export default function RootLayout() {
             <Stack.Screen name="+not-found" />
           </Stack>
         </View>
+        </NavigationProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

@@ -1,15 +1,11 @@
 import React from 'react';
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { FontAwesome, Feather, MaterialIcons } from '@expo/vector-icons';
-
 const Navbar = () => {
   return (
     <View style={styles.navbar}>
       <TouchableOpacity style={styles.profileContainer}>
-        <Image
-          source={{ uri: 'https://via.placeholder.com/40' }} 
-          style={styles.profileImage}
-        />
+      <Feather name="user" size={30} color="black" />
       </TouchableOpacity>
 
       <View style={styles.rightIcons}>
@@ -36,6 +32,8 @@ const styles = StyleSheet.create({
   profileContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    borderWidth: 0.5,
+    borderRadius:50,
   },
   profileImage: {
     width: 40,

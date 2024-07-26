@@ -6,7 +6,7 @@ export const CardData: CarouselDataType = {
     {
       id: 1,
       image: require("../assets/images/cricket.png"),
-      title: "Red",
+      title: "Crciket",
     },
     {
       id: 2,

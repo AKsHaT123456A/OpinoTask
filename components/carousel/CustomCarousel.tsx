@@ -5,17 +5,14 @@ import Animated, {
   useAnimatedScrollHandler,
   useAnimatedRef,
 } from "react-native-reanimated";
-import Pagination from "./Pagination";
 import CustomImage from "./Carousel";
 import { CarouselDataType } from "@/types/CarousalDataType";
 const CustomCarousal = ({
   data,
   autoPlay,
-  pagination,
 }: {
   data: CarouselDataType;
   autoPlay: boolean;
-  pagination: boolean;
 
 }) => {
   const scrollViewRef = useAnimatedRef<Animated.ScrollView>();

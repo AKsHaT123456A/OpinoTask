@@ -12,6 +12,8 @@ export const Colors = {
       icon: '#687076',
       tabIconDefault: '#687076',
       tint: '#2f95dc',
+      buttonColorYes:"#3467eb",
+      buttonColorNo:"#eb2646"
     },
     dark: {
       text: '#fff',
