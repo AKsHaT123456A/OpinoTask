@@ -18,11 +18,11 @@ const BUTTON_HEIGHT = 100;
 const BUTTON_PADDING = 10;
 const SWIPEABLE_DIMENSIONS = BUTTON_HEIGHT - 2 * BUTTON_PADDING;
 const H_SWIPE_RANGE = BUTTON_WIDTH - 2 * BUTTON_PADDING - SWIPEABLE_DIMENSIONS;
-export const useSwipeButton = (isYes, closeBottomSheet) => {
+export const useSwipeButton = (isYes: boolean, closeBottomSheet?: () => void) => {
   const { setOrder, balance } = useBalance();
   const X = useSharedValue(0);
   const [orderPlaced, setOrderPlaced] = useState(false);
-  const handleComplete = async (isToggled) => {
+  const handleComplete = async (isToggled: boolean) => {
     if (isToggled !== orderPlaced) {
       setOrderPlaced(isToggled);
       
@@ -31,6 +31,7 @@ export const useSwipeButton = (isYes, closeBottomSheet) => {
         await AsyncStorage.setItem("balance", balance.toString());
       }
       if (isToggled) {
+        if(!closeBottomSheet)return ;
         setTimeout(() => {
           runOnJS(closeBottomSheet)();
         }, 1000);

@@ -2,7 +2,7 @@ import React from "react";
 import { View, ScrollView, Text, Image, TouchableOpacity } from "react-native";
 import CustomCarousel from "@/components/carousel/CustomCarousel";
 import Navbar from "@/components/Navbar";
-import { styles } from "./style";
+import { styles } from "../../style";
 import { BannerData, BettingCardData } from "@/constants/data";
 import {
   BottomSheetModal,

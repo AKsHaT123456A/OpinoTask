@@ -7,7 +7,7 @@ const AvailableBalance: React.FC = () => {
   const [color, setColor] = React.useState<string | null>('black');
   React.useEffect(() => {
     const fetchBalance = async () => {
-      try {
+      try {        
         const storedBalance = await AsyncStorage.getItem('balance');
         const color = await AsyncStorage.getItem("color");
         setColor(color);

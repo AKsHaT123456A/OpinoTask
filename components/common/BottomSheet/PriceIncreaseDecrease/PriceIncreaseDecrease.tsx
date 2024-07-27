@@ -31,7 +31,6 @@ const PriceIncreaseDecrease: React.FC<{
       return; 
     }
     const newBalance = balance - price;
-    
     setBalance(newBalance);
   };
 
